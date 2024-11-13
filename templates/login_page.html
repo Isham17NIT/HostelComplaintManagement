@@ -1,0 +1,32 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Login</title>
+    <link rel="stylesheet" href="{% static 'login_page.css' %}">
+</head>
+<body style="background-image:url({% static 'login_background.jpg' %})">
+    <br><br><br><br><br><br><br>
+    <center>
+
+        <div style="background-color:white;color:black;border-radius:5%;font-family:arial;">
+            {% for message in messages %}
+            {{message}}
+            {% endfor %}
+        </div>
+    <form class="login" action="login" method="post">
+        {% csrf_token %}
+        <center>
+        <h2 style="color:#33234C">Login Account</h2><br>
+        <label for="username">Enter Username:</label><br>
+        <input type="text" id="username" name="username"><br><br>
+        <label for="password">Enter Password:</label><br>
+        <input type="password" id="password" name="password"><br><br>
+        <input type="submit" id="submit">
+        </center>
+    </form>
+    </center>
+</body>
+</html>

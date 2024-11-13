@@ -1,0 +1,26 @@
+*{
+    padding:0px;
+    margin:0px;
+}
+body{
+    background-image:url("login_background.jpg");
+    background-size:cover;
+    font-family: arial;
+    color:#33234C;
+    font-weight: bolder;
+}
+#main{
+    background-color:#e4d0e7;
+    width:700px;
+    height:500px;
+    display:flex;
+    align-items: center;
+    justify-content: center;
+    border-radius:4%;
+    padding-top:0px;
+}
+.x
+{
+    width:300px;
+    padding-right:20px;
+}

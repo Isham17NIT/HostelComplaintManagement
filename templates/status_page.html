@@ -1,0 +1,37 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Status Page</title>
+    <link rel="stylesheet" href="{% static 'status_page.css' %}">
+</head>
+<body>
+    <div style="background-color: #e4d0e7;height:70px;">
+    <center>
+    <h1 style="font-size:40px;">Complaint History</h1>
+</center>
+</div>
+    <div id="top_div_complaint_history">
+        <div id="room_number" class="top_div_history_icons">Room No.</div>
+        <div id="hostel_building" class="top_div_history_icons">Hostel Building</div>
+        <div id="subject_of_complaint" class="top_div_history_icons">Subject of Complaint</div>
+        <div id="complaint" class="top_div_history_icons">Complaint</div>
+        <div id="status" class="top_div_history_icons">Status</div>
+    </div>
+    {% for complaint in complaints %}
+    <div id="top_div_complaint_history1">
+        <div id="room_number" class="top_div_history_icons">{{complaint.room_number}}</div>
+        <div id="hostel_building" class="top_div_history_icons">{{complaint.hostel_name}}</div>
+        <div id="subject_of_complaint" class="top_div_history_icons">{{complaint.subject_of_complaint}}</div>
+        <div id="complaint" class="top_div_history_icons">{{complaint.complaint_description}}</div>
+        {% if complaint.status %}
+        <div id="status" class="top_div_history_icons" style="color:green">Resolved</div>
+        {% else %}
+        <div id="status" class="top_div_history_icons" style="color:red">Pending</div>
+        {% endif %}
+    </div>
+    {% endfor %}
+</body>
+</html>

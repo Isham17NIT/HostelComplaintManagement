@@ -1,0 +1,49 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>New Complaint</title>
+    <link rel="stylesheet" href="{% static 'new_complaint.css' %}">
+</head>
+<body style="background-image: url({% static 'blank_background.png' %});">
+    <br>
+    <form action="complaint_submit" method="post">
+        {% csrf_token %}
+
+    <div class="main">
+        <div id="complaint_heading"><center><h1>Add a Complaint</h1></center></div><br><br>
+        <div class="div3">
+        <div class="div1">
+            <label for="first_name">Enter first name:</label><br>
+            <input type="text" id="first_name" name="first_name"><br><br>
+            <label for="rollno">Enter roll no:</label><br>
+            <input type="text" id="rollno" name="roll_number"><br><br>
+            <label for="room">Enter room no.: </label><br>
+            <input type="text" id="room" name="room_number"><br><br>
+            <label for="hostel">Enter hostel name:</label><br>
+            <input type="text" id="hostel" name="hostel_name"><br><br>
+        </div>
+        <div class="div2">
+            <label for="last_name">Enter last name:</label><br>
+            <input type="text" id="last_name" name="last_name"><br><br>
+            <label for="phone">Enter contact no.: </label><br>
+            <input type="phone" id="phone" maxlength="10" name="contact_number"><br><br>
+            <label for="email">Enter email:</label><br>
+            <input type="email" id="email" name="email"><br><br>
+            <label for="subject">Enter subject of complaint:</label><br>
+            <input type="text" id="subject" name="subject_of_complaint"><br><br>
+        </div>
+        </div>
+        <div class="complaint">
+            <label for="text">Enter your complaint:</label>
+            <br>
+            <input id="text" type="text" rows="6" cols="80" name="complaint_description">
+        </div>
+        <br>
+        <center><button>Submit</button></center>
+    </div>
+</form>
+</body>
+</html>

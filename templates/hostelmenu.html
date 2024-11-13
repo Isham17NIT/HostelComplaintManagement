@@ -1,0 +1,40 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>hostel menu</title>
+    <style>
+        .top_div_history_icons{
+            width: 300px;
+            padding-left: 0px;
+        }
+        body{
+            background-color:#e4d0e7 ;
+        }
+    </style>
+</head>
+<body>
+    <div style="background-color: #e4d0e7;height:70px;">
+        <center>
+        <h1 style="font-size:40px;">Mess Menu</h1>
+    </center>
+    </div>
+        <div id="top_div_complaint_history" style="display:flex;justify-content: space-evenly;font-size: 30px;background-color: #33234c;color:white">
+            <div id="room_number" class="top_div_history_icons">Day</div>
+            <div id="hostel_building" class="top_div_history_icons">Breakfast</div>
+            <div id="subject_of_complaint" class="top_div_history_icons">Lunch</div>
+            <div id="complaint" class="top_div_history_icons">Dinner</div>
+        </div>
+        {% for menu in menus %}
+        <div id="top_div_complaint_history" style="display:flex;justify-content: space-evenly;font-size: 25px;background-color: #a9a6ad;color:black;border: 1px solid white;">
+            <div id="room_number" class="top_div_history_icons">{{ menu.day }}</div>
+            <div id="hostel_building" class="top_div_history_icons">{{ menu.breakfast }}</div>
+            <div id="subject_of_complaint" class="top_div_history_icons">{{ menu.lunch }}</div>
+            <div id="complaint" class="top_div_history_icons">{{ menu.dinner }}</div>
+        </div>
+        {% endfor %}
+        
+</body>
+</html>
